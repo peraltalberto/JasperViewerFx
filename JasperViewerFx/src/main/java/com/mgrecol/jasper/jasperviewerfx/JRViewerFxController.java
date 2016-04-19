@@ -35,6 +35,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -61,7 +62,7 @@ import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
  * @filename JRViewerFxController.java
  * @date Mar 23, 2015
  */
-public class JRViewerFxController implements  Initializable {
+public class JRViewerFxController extends BorderPane implements  Initializable {
 
 
 	private JRViewerFxMode printMode;
@@ -285,6 +286,29 @@ public class JRViewerFxController implements  Initializable {
 	}
 
 
+    @FXML
+    void first(ActionEvent event) {
+        pageList.getSelectionModel().selectFirst();
+        System.out.println(pageList.getSelectionModel().getSelectedItem()-1);
+    }
+
+    @FXML
+    void before(ActionEvent event) {
+        pageList.getSelectionModel().selectPrevious();
+        System.out.println(pageList.getSelectionModel().getSelectedItem()-1);
+    }
+
+    @FXML
+    void next(ActionEvent event) {
+pageList.getSelectionModel().selectNext();
+        System.out.println(pageList.getSelectionModel().getSelectedItem()-1);
+    }
+
+    @FXML
+    void last(ActionEvent event) {
+pageList.getSelectionModel().selectLast();
+        System.out.println(pageList.getSelectionModel().getSelectedItem()-1);
+    }
 
 
 	public void setTransactionResult(String result, String description,

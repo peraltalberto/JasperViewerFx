@@ -7,19 +7,70 @@
 
 <BorderPane fx:id="view" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mgrecol.jasper.jasperviewerfx.JRViewerFxController">
    <top>
-      <Pane prefHeight="52.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="41.0" prefWidth="600.0">
          <children>
-            <Button layoutX="25.0" layoutY="15.0" mnemonicParsing="false" onAction="#print" text="Print" />
-            <ComboBox fx:id="pageList" layoutX="300.0" layoutY="15.0" onAction="#pageListSelected" prefHeight="22.0" prefWidth="26.0" />
-            <Button layoutX="102.0" layoutY="15.0" mnemonicParsing="false" onAction="#save" text="Save" />
-              <Slider fx:id="zoomLevel" blockIncrement="25.0" layoutX="424.0" layoutY="23.0" majorTickUnit="75.0" max="175.0" min="25.0" minorTickCount="2" prefHeight="23.0" prefWidth="141.0" showTickLabels="true" showTickMarks="true" value="100.0" />
-            <Label layoutX="239.0" layoutY="20.0" text="View Page" />
-            <Label layoutX="481.0" layoutY="4.0" text="Zoom" />
-
-         </children></Pane>
+            <Button layoutX="53.0" layoutY="4.0" mnemonicParsing="false" onAction="#print" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="4.0">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ic_print_black_18dp_1x.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ComboBox fx:id="pageList" layoutX="237.0" layoutY="4.0" onAction="#pageListSelected" prefHeight="26.0" prefWidth="18.0" AnchorPane.leftAnchor="237.0" AnchorPane.topAnchor="4.0" />
+            <Button layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#save" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="4.0">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ic_save_black_18dp_1x.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+              <Slider fx:id="zoomLevel" blockIncrement="25.0" layoutX="393.0" layoutY="10.0" max="200.0" min="25.0" minorTickCount="2" prefHeight="0.0" prefWidth="199.0" showTickLabels="true" showTickMarks="true" value="100.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="6.0" />
+            <Label layoutX="349.0" layoutY="6.0" text="Zoom" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="6.0" />
+            <Button layoutX="130.0" layoutY="4.0" mnemonicParsing="false" onAction="#before" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="4.0">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ic_navigate_before_black_18dp_1x.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="198.0" layoutY="4.0" mnemonicParsing="false" onAction="#last" AnchorPane.leftAnchor="198.0" AnchorPane.topAnchor="4.0">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ic_last_page_black_18dp_1x.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="96.0" layoutY="4.0" mnemonicParsing="false" onAction="#first" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="4.0">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ic_first_page_black_18dp_1x.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="164.0" layoutY="4.0" mnemonicParsing="false" onAction="#next" AnchorPane.leftAnchor="164.0" AnchorPane.topAnchor="4.0">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ic_navigate_next_black_18dp_1x.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
    </top>
    <center>
-      <ScrollPane prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+      <ScrollPane prefHeight="499.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <content>
             <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </content>
